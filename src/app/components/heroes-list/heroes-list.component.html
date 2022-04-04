@@ -1,0 +1,152 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue">My Heroes</h1>
+    <div class="d-flex">
+      <button
+        (click)="clickAddHero()"
+        class="btn btn-success"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Add New Hero
+      </button>
+    </div>
+  </div>
+</nav>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Hero ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Hero Name</th>
+      <th scope="col">Superpower Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroData">
+      <td>{{ hero.id }}</td>
+      <td>{{ hero.firstName }}</td>
+      <td>{{ hero.lastName }}</td>
+      <td>{{ hero.heroName }}</td>
+      <td>{{ hero.superpowerName }}</td>
+      <td>
+        <button
+          style="color: rgb(255, 255, 255)"
+          (click)="onEditHero(hero)"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          class="btn btn-info"
+        >
+          Edit
+        </button>
+        <button (click)="deleteHero(hero)" class="btn btn-danger mx-3">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hero Details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              formControlName="firstName"
+              aria-describedby="firstName"
+              placeholder="Insert first name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              id="lastName"
+              aria-describedby="lastName"
+              placeholder="Insert last name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="heroName" class="form-label">Hero Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="heroName"
+              formControlName="heroName"
+              aria-describedby="heroName"
+              placeholder="Insert hero name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="superpowerName" class="form-label"
+              >Superpower Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="superpowerName"
+              formControlName="superpowerName"
+              aria-describedby="superpowerName"
+              placeholder="Insert superpower name"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="cancel"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          *ngIf="showAdd"
+          (click)="postHeroDetails()"
+          class="btn btn-primary"
+        >
+          Add Hero
+        </button>
+        <button
+          type="button"
+          *ngIf="showUpdate"
+          (click)="updateHeroDetails()"
+          class="btn btn-primary"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

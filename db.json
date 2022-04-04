@@ -1,0 +1,74 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "firstName": "Mark",
+      "lastName": "Twain",
+      "heroName": "letterMan",
+      "superpowerName": "wordPower"
+    },
+    {
+      "id": 2,
+      "firstName": "Tony ",
+      "lastName": "Stark",
+      "heroName": "Iron-Man",
+      "superpowerName": "durability"
+    },
+    {
+      "id": 3,
+      "firstName": "Usain",
+      "lastName": "Bolt",
+      "heroName": "Speedy",
+      "superpowerName": "speed"
+    },
+    {
+      "id": 4,
+      "firstName": "Current",
+      "lastName": "Amper",
+      "heroName": "Voltage",
+      "superpowerName": "magneticField"
+    },
+    {
+      "id": 5,
+      "firstName": "Galp",
+      "lastName": "Andrew",
+      "heroName": "Byte-Man",
+      "superpowerName": "superSmart"
+    },
+    {
+      "id": 6,
+      "firstName": "Manhattan",
+      "lastName": "Doctor",
+      "heroName": "Atom",
+      "superpowerName": "disintegrator"
+    },
+    {
+      "id": 7,
+      "firstName": "Bruce",
+      "lastName": "Banner",
+      "heroName": "Hulk",
+      "superpowerName": "strength"
+    },
+    {
+      "id": 8,
+      "firstName": "Bruce",
+      "lastName": "Wayne",
+      "heroName": "Batman",
+      "superpowerName": "intelliFighter"
+    },
+    {
+      "id": 9,
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "heroName": "Spider-Man",
+      "superpowerName": "agility"
+    },
+    {
+      "id": 10,
+      "firstName": "Mary",
+      "lastName": "Ilda",
+      "heroName": "Roller Girl",
+      "superpowerName": "camouflage"
+    }
+  ]
+}
